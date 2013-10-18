@@ -58,11 +58,6 @@ begin
   if not fTask.Canceled then
   begin
     fTask.Cancel;
-    Synchronize(
-      procedure
-      begin
-        Form25.Memo1.Lines.Add(Self.ThreadID.ToString + ' is canceled');
-      end);
   end;
 end;
 
@@ -74,8 +69,6 @@ begin
       Sleep(2000);
     end);
   fTask.Start;
-
-//  fTask.Wait;
 
   Synchronize(
     procedure
@@ -96,8 +89,6 @@ begin
         else
           i := Form25.Memo1.Lines.Add('Thread id: ' + Self.ThreadID.ToString + ' Inner task is running. /');
 
-        Sleep(10);
-
         Application.ProcessMessages;
         if fTask.Canceled then
         begin
@@ -112,6 +103,7 @@ begin
           Form25.Memo1.Lines[i] := Form25.Memo1.Lines[i] + ' done.'
         else
           Form25.Memo1.Lines.Add('Done ' + Self.ThreadID.ToString);
+        Form25.Memo1.Repaint;
         Application.ProcessMessages;
       end;
     end);
