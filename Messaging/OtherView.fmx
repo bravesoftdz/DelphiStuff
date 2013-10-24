@@ -1,0 +1,44 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Other view'
+  ClientHeight = 123
+  ClientWidth = 168
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop, dkiPhone, dkiPad]
+  OnClose = FormClose
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object Button1: TButton
+    Height = 22.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 0
+    Text = 'Send string message'
+    Width = 121.000000000000000000
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Height = 22.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 48.000000000000000000
+    TabOrder = 1
+    Text = 'Send integer message'
+    Width = 121.000000000000000000
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Height = 22.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 80.000000000000000000
+    TabOrder = 2
+    Text = 'Send custom message'
+    Width = 121.000000000000000000
+    OnClick = Button3Click
+  end
+end
